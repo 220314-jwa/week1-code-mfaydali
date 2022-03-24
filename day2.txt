@@ -1,50 +1,53 @@
 public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+	String[] foodTypes = getFoodTypes(); // declaration of a String array named "foodTypes"
+	String myType = foodTypes[2]; // // creates an variable and assign the value that is located in index-2 which is 3rd value
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType); // assigning the list of food for dinner type
 	
-	for (String food : foodsOfMyType) {
-		System.out.println(food);
+	// enhanced for loop, for-each loop
+	for (String food : foodsOfMyType) { // printing out the list of foods
+		System.out.println(food); 
 	}
 }
 
+// printing out the list of foods
 public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; // declaring values to foodTypes array
+	return foodTypes; // returns the same
 }
 
 public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+	String[] foods = new String[3]; // there will be 3 items in foods array
 
+	// returning list of food list of foods based on TYPE using switch statements
 	switch(type) {
-	case "breakfast":
+	case "breakfast": // if type is breakfast, pass these to foods
 		foods[0] = "pancakes";
 		foods[1] = "cereal";
 		foods[2] = "omelette";
 		break;
-	case "lunch":
+	case "lunch": // if type is lunch, pass these to foods
 		foods[0] = "sandwich";
 		foods[1] = "salad";
 		foods[2] = "soup";
 		break;
-	case "dinner":
+	case "dinner": // if type is dinner, pass these to foods
 		foods[0] = "curry";
 		foods[1] = "stir fry";
 		foods[2] = "burger";
 		break;
-	case "dessert":
+	case "dessert": // if type is dessert, pass these to foods
 		foods[0] = "cake";
 		foods[1] = "ice cream";
 		foods[2] = "candy";
 		break;
-	case "snack":
+	case "snack": //if type is snack, pass these to foods
 		foods[0] = "chips";
 		foods[1] = "apple";
 		foods[2] = "samosa";
 		break;
 	default:
-		// add your own
+		System.out.println("I should get pasta");
 		break;
 	}
 

@@ -1,12 +1,13 @@
 public class Main {
 	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+		Javalin app = Javalin.create(); // here create a object called Javalin
 
-		app.start();
+		app.start(); // to start to javalin object
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+		app.get("foods", ctx -> { // this is the handler implementation
+			Food myFood = new Food("carrots", "vegetable"); // in Food class we create an object myFood, in that 							    // constructor pass parameters called "carrots" and "vegetable"
+			ctx.result("You got: " + myFood.name); // this is the response that will return to the user
+						             // so the output would be: You got carrots and vegetable
 		});
 	}
 }

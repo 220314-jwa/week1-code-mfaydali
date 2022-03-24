@@ -1,13 +1,13 @@
-int score = 80;
+int score = 80;   // here we assign a value to variable called "score"
 
-String result;
+String result; // we created a string variable called "result"
 
-if (score == 80) {
+if (score == 80) {  // we used "if" statement to set the condition, if score equals to 80, we passed this result
 	result = "You passed!";
-} else if (score > 80) {
+} else if (score > 80) {   // if score is greater 80, we passed something else
 	result = "You did great!";
-} else {
+} else {  // if none of them was true, we passed this "result".
 	result = "You did not pass. Try again!";
 }
 
-System.out.println(result);
+System.out.println(result);  // this is the print out function.

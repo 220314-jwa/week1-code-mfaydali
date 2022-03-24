@@ -1,25 +1,25 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
+<html> // defines markup system
+	<head> // first section in the code that contains info
+		<title>Daily Code Review</title> // declaring the title of the page
 	</head>
-	<body>
-		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
+	<body> // it contains all the element from HTML document
+		<h1>Cook your food!</h1> // here is the heading tag that shows main topic
+		<form action="http://localhost:8080/cook"> // this shows what should happen to the data when a form submitted.
+			<label for="foodName">Food Name:</label> // define a label for foodName variable
+			<input id="foodName" name="foodName" type="text"> // assign an identifier to the input element
+			<br> // break, don't add space between paragraphs
+			<button type="submit">Submit</button> // submitting the form, clicking button
 		</form>
 	</body>
 </html>
 
 public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+	Javalin app = Javalin.create(); // create a instance of Javalin
+	app.start(); // to start to Javalin object
 
-	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
-		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+	app.get("cook", ctx -> { // handler implementation
+		String foodSent = ctx.formParam("foodName"); // this gives a link of all hash data to iterate over
+		String cookedFood = "cooked " + foodSent; // create a object and add "cooked" string to "foodSent"
+		ctx.result("Here's your food! <br>" + cookedFood); // it will return to response and print out the sentence without blanks
 	});
 }

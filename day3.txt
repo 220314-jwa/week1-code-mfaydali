@@ -1,24 +1,29 @@
-public class Food {
-	public String name;
+public class Food {  // creating a Food class
+	// assigning two variables called "name" and "type"
+	public String name; 
 	public String type;
 
+	// creating a method which take name and type as the input arguments
 	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
+		this.name = name; // passing the value of this "name" argument to "name" in Food class
+		this.type = type; // passing the value of this "type" argument to "type" in Food class
 	}
 
+	// this is a cook method
 	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+		if (!name.contains("cooked")) {  // checking if name variable contains "cooked" string if not
+			name = "cooked " + name;  // add "cooked" string to name variable 
+					          //so that output would be "cooked" + name
 		}
 	}
 }
 
+// creating a Main driver method
 public class Main {
 	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+		Food myFood = new Food("potato", "vegetable"); // creating a variable called "myFood" and assign 									            //that variable two values which is "potato" and "vegetable"
+		myFood.cook(); // here calling the method cook with the variable myFood 
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name); // printing out the name variable myFood
 	}
 }
